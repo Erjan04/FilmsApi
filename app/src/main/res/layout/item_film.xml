@@ -5,25 +5,20 @@
     android:orientation="vertical"
     android:layout_margin="16dp"
     android:gravity="center"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <ImageView
+        android:id="@+id/filmImageView"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        tools:src="@color/black"/>
     <TextView
-        android:id="@+id/filmName"
-        android:layout_width="match_parent"
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="FILM"
-        android:textSize="32sp"
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:id="@+id/nameDirector"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/filmName"
-        tools:text="DIRECTOR"
-        android:textSize="20sp"
+        tools:text="TITLE"
+        android:gravity="center"
+        android:textSize="24sp"
         android:textColor="@color/black"/>
 
 </LinearLayout>

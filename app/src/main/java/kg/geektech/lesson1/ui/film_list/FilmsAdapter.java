@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,8 +60,8 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.ViewHolder> 
         }
 
         public void bind(Films films) {
-            binding.filmName.setText(films.getTitle());
-            binding.nameDirector.setText(films.getDirector());
+            binding.textViewTitle.setText(films.getTitle());
+            Glide.with(binding.filmImageView.getContext()).load(films.getImage()).into(binding.filmImageView);
             itemView.setOnClickListener(v -> onClick.onClickListener(films));
         }
     }

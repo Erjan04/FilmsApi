@@ -9,6 +9,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.bumptech.glide.Glide;
+
 import kg.geektech.lesson1.App;
 import kg.geektech.lesson1.data.models.Films;
 import kg.geektech.lesson1.databinding.FragmentFilmDetailBinding;
@@ -39,7 +42,9 @@ public class FilmDetailFragment extends Fragment {
                     Films films = response.body();
                     binding.progressBar.setVisibility(View.GONE);
                     assert films != null;
+                    binding.textTitle.setText(films.getTitle());
                     binding.textView.setText(films.getDescription());
+                    Glide.with(requireActivity()).load(films.getImage()).into(binding.imageView);
                 }
             }
             @Override
